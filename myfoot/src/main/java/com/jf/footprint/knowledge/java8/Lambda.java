@@ -1,5 +1,8 @@
 package com.jf.footprint.knowledge.java8;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Lambda {
 
 
@@ -9,12 +12,20 @@ public class Lambda {
         void workHard(String who);
     }
 
-
     public static void main(String[] args) {
 
-        Work work = who -> System.out.println("me" + who);
+        String[] a = {"w", "o", "r", "k"};
+        List<String> b = Arrays.asList(a);
 
-        work.workHard("en");
+        // 之前的遍历方法
+        for (String c : b) {
+            System.out.println(c);
+        }
+        // lambda表达式遍历方法
+        b.forEach((c) -> System.out.println(c));
+
+        // 双冒号操作符遍历方法
+        b.forEach(System.out::println);
 
     }
 
